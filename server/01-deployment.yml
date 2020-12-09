@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: street-merchant-server
+  name: street-merchant-server
+  labels:
+    app: street-merchant-server
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: street-merchant-server
+  template:
+    metadata:
+      namespace: street-merchant-server
+      labels:
+        app: street-merchant-server
+    spec:
+      containers:
+        - name: street-merchant-server
+          imagePullPolicy: Always
+          image: ghcr.io/jef/streetmerchant:latest
+          envFrom:
+            - secretRef:
+                name: street-merchant-server-env

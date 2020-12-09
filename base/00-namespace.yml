@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: street-merchant-server
+  labels: 
+    name: street-merchant-server
