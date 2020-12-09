@@ -20,7 +20,7 @@ Simple kubernetes deployment of streetmerchant.
 ```sh
 docker run \
   -it --rm --env-file ./.env \
-  ghcr.io/jef/streetmerchant:nightly
+  ghcr.io/jef/streetmerchant:latest
 ```
 
 ### Testing notifications
@@ -28,5 +28,5 @@ docker run \
 ```sh
 docker run \
   -it --rm --env-file ./secrets/env.txt \
-  ghcr.io/jef/streetmerchant:nightly test:notification:production
+  ghcr.io/jef/streetmerchant:latest test:notification:production
 ```
